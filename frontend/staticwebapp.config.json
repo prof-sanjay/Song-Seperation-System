@@ -1,0 +1,8 @@
+{
+    "routes": [
+        {
+            "route": "/api/*",
+            "rewrite": "http://52.184.85.220/api/:splat"
+        }
+    ]
+}
