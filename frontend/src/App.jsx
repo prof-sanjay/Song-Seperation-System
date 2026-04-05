@@ -3,7 +3,7 @@ import axios from 'axios';
 import { UploadCloud, Music, Download, Mic2, AlertCircle, Loader2 } from 'lucide-react';
 
 export default function App() {
-  const API_BASE_URL = '';
+  const API_BASE_URL = "http://52.184.85.220:8000";
   const [file, setFile] = useState(null);
   const [fileId, setFileId] = useState(null);
   const [status, setStatus] = useState('idle'); // idle, uploading, processing, completed, error
@@ -75,7 +75,7 @@ export default function App() {
     formData.append('file', file);
 
     try {
-      const res = await axios.post(`/api/upload`, formData, {
+      const res = await axios.post(`${API_BASE_URL}/api/upload`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       setFileId(res.data.file_id);
