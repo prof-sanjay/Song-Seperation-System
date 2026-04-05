@@ -14,7 +14,7 @@ app = FastAPI(
 )
 
 # Connect decoupled routing logics
-app.include_router(router)
+app.include_router(router, prefix="/api")
 
 @app.get("/")
 def health_check():

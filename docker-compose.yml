@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: acoustica-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./input:/app/input
+      - ./separated:/app/separated
+    # We map volumes so separated files persist on the host machine
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: acoustica-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
