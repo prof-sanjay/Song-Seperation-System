@@ -1,9 +1,9 @@
 import shutil
 import json
 import logging
-from app.utils.demucs import run_demucs
-from app.utils.scale import detect_key
-from app.services.file_service import get_output_folder, OUTPUT_DIR, MODEL_NAME, cleanup_upload
+from utils.demucs import run_demucs
+from utils.scale import detect_key
+from services.file_service import get_output_folder, OUTPUT_DIR, MODEL_NAME, cleanup_upload
 
 logger = logging.getLogger(__name__)
 

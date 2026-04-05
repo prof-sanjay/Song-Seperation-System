@@ -1,8 +1,8 @@
 from fastapi import APIRouter, UploadFile, File, BackgroundTasks, HTTPException
 from fastapi.responses import FileResponse
-from app.services.file_service import validate_and_save_upload, get_output_folder, cleanup_upload
-from app.services.audio_service import process_audio_pipeline
-from app.utils.scale import detect_key
+from services.file_service import validate_and_save_upload, get_output_folder, cleanup_upload
+from services.audio_service import process_audio_pipeline
+from utils.scale import detect_key
 import os
 
 router = APIRouter()
