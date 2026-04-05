@@ -1,0 +1,17 @@
+{
+    "routes": [
+        {
+            "route": "/api/*",
+            "methods": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE"
+            ],
+            "allowedRoles": [
+                "anonymous"
+            ],
+            "rewrite": "http://52.184.85.220/api/:splat"
+        }
+    ]
+}
